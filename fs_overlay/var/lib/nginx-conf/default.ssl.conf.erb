@@ -19,7 +19,7 @@ server {
     <% if domain.upstream %>
     location / {
         proxy_cache <%= domain.name %>;
-        add_header X-Proxy-Cache $upstream_cache_status
+        add_header X-Proxy-Cache $upstream_cache_status;
 
         proxy_pass <%= domain.upstream %>;
         proxy_set_header Host $host;
