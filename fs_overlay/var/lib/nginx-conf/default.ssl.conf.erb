@@ -1,4 +1,4 @@
-proxy_cache_path  /var/cache/nginx/<%= domain.name %>; levels=1:2 keys_zone=<%= domain.name %>;:8m max_size=1000m inactive=600m;
+proxy_cache_path  /var/cache/nginx/<%= domain.name %>; levels=1:2 keys_zone=<%= domain.name %>:8m max_size=1000m inactive=600m;
 proxy_cache_key $proxy_host$uri?$arg_locale;
 
 server {
