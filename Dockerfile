@@ -10,7 +10,7 @@ ADD https://github.com/just-containers/s6-overlay/releases/download/v1.11.0.1/s6
 ADD https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz /tmp/
 ADD https://raw.githubusercontent.com/diafygi/acme-tiny/daba51d37efd7c1f205f9da383b9b09968e30d29/acme_tiny.py /bin/acme_tiny
 
-mkdir -p /var/cache/nginx
+RUN mkdir -p /var/cache/nginx
 
 RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C / &&\
     tar -C /bin -xzf /tmp/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz && \
