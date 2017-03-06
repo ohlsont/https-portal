@@ -1,5 +1,4 @@
 proxy_cache_path  /var/cache/nginx/<%= domain.upstream.gsub(':','_') %> levels=1:2 keys_zone=<%= domain.upstream.gsub(':','_') %>:8m max_size=1000m inactive=600m;
-proxy_cache_key <%= domain.upstream.gsub(':','_') %>$proxy_host$uri?$arg_locale;
 
 server {
     listen 443 ssl http2;
