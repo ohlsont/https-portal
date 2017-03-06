@@ -32,6 +32,25 @@ http {
     keepalive_timeout  <%= ENV['KEEPALIVE_TIMEOUT'] || 65 %>;
 
     gzip  <%= ENV['GZIP'] || 'on' %>;
+    gzip_disable "msie6";
+
+    gzip_comp_level 6;
+    gzip_min_length 1100;
+    gzip_buffers 16 8k;
+    gzip_proxied any;
+    gzip_types
+        text/plain
+        text/css
+        text/js
+        text/xml
+        text/javascript
+        application/javascript
+        application/x-javascript
+        application/json
+        application/xml
+        application/rss+xml
+        image/svg+xml;
+
     server_tokens <%= ENV['SERVER_TOKENS'] || 'off' %>;
 
     server_names_hash_max_size <%= ENV['SERVER_NAMES_HASH_MAX_SIZE'] || 512 %>;
